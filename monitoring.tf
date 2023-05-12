@@ -1,7 +1,7 @@
 locals {
   alarm_description = jsonencode(merge({
     Severity    = "warning"
-    Description = "Lambda Function Metrics: https://${var.aws_region}.console.aws.amazon.com/lambda/home?region=${var.aws_region}#/functions/${local.function_name}?tab=monitoring"
+    Description = "Lambda Function Metrics: https://${module.this.aws_region}.console.aws.amazon.com/lambda/home?region=${module.this.aws_region}#/functions/${local.function_name}?tab=monitoring"
   }, module.cloudwatch_label.tags, module.cloudwatch_label.additional_tag_map))
 }
 

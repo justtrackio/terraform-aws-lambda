@@ -13,8 +13,8 @@ module "dead_letter_queue" {
   alarm_evaluation_periods  = var.alarm_backlog.evaluation_periods
   alarm_period              = var.alarm_backlog.period
   alarm_threshold           = var.alarm_backlog.threshold
-  aws_account_id            = var.aws_account_id
-  aws_region                = var.aws_region
+  aws_account_id            = module.this.aws_account_id
+  aws_region                = module.this.aws_region
 }
 
 data "aws_iam_policy_document" "dead_letter_queue_access" {
