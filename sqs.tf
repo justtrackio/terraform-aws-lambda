@@ -2,7 +2,7 @@ module "dead_letter_queue" {
   count = var.dead_letter_queue_create ? 1 : 0
 
   source  = "justtrackio/sqs-queue/aws"
-  version = "1.4.0"
+  version = "1.5.0"
 
   context    = module.sqs_label.context
   queue_name = "dead"
