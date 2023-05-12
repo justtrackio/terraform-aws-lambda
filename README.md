@@ -19,11 +19,11 @@ Terraform module which creates a lambda function, monitoring via CloudWatch and 
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_cloudwatch_label"></a> [cloudwatch\_label](#module\_cloudwatch\_label) | cloudposse/label/null | 0.25.0 |
+| <a name="module_cloudwatch_label"></a> [cloudwatch\_label](#module\_cloudwatch\_label) | justtrackio/label/null | 0.26.0 |
 | <a name="module_dead_letter_queue"></a> [dead\_letter\_queue](#module\_dead\_letter\_queue) | justtrackio/sqs-queue/aws | 1.5.0 |
-| <a name="module_iam_label"></a> [iam\_label](#module\_iam\_label) | cloudposse/label/null | 0.25.0 |
-| <a name="module_lambda_label"></a> [lambda\_label](#module\_lambda\_label) | cloudposse/label/null | 0.25.0 |
-| <a name="module_sqs_label"></a> [sqs\_label](#module\_sqs\_label) | cloudposse/label/null | 0.25.0 |
+| <a name="module_iam_label"></a> [iam\_label](#module\_iam\_label) | justtrackio/label/null | 0.26.0 |
+| <a name="module_lambda_label"></a> [lambda\_label](#module\_lambda\_label) | justtrackio/label/null | 0.26.0 |
+| <a name="module_sqs_label"></a> [sqs\_label](#module\_sqs\_label) | justtrackio/label/null | 0.26.0 |
 | <a name="module_this"></a> [this](#module\_this) | justtrackio/label/null | 0.26.0 |
 
 ## Resources
