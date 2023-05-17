@@ -2,12 +2,12 @@ module "dead_letter_queue" {
   count = var.dead_letter_queue_create ? 1 : 0
 
   source  = "justtrackio/sqs-queue/aws"
-  version = "1.5.0"
+  version = "1.5.1"
 
   context    = module.sqs_label.context
   queue_name = "dead"
 
-  alarm_create              = var.alarm_create
+  alarm_enabled             = var.alarm_enabled
   alarm_minutes             = var.alarm_backlog.minutes
   alarm_datapoints_to_alarm = var.alarm_backlog.datapoints_to_alarm
   alarm_evaluation_periods  = var.alarm_backlog.evaluation_periods

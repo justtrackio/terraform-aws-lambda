@@ -15,7 +15,7 @@ resource "aws_iam_role_policy_attachment" "lambda_insights" {
 resource "aws_cloudwatch_metric_alarm" "errors" {
   alarm_description = local.alarm_description
   alarm_name        = "${module.cloudwatch_label.id}-errors"
-  count             = var.alarm_create ? 1 : 0
+  count             = var.alarm_enabled ? 1 : 0
 
   namespace   = "AWS/Lambda"
   metric_name = "Errors"
@@ -40,7 +40,7 @@ resource "aws_cloudwatch_metric_alarm" "errors" {
 resource "aws_cloudwatch_metric_alarm" "success_rate" {
   alarm_description = local.alarm_description
   alarm_name        = "${module.cloudwatch_label.id}-success-rate"
-  count             = var.alarm_create ? 1 : 0
+  count             = var.alarm_enabled ? 1 : 0
 
   comparison_operator = "LessThanThreshold"
   datapoints_to_alarm = var.alarm_success_rate.datapoints_to_alarm
@@ -93,7 +93,7 @@ resource "aws_cloudwatch_metric_alarm" "success_rate" {
 resource "aws_cloudwatch_metric_alarm" "throttles" {
   alarm_description = local.alarm_description
   alarm_name        = "${module.cloudwatch_label.id}-throttles"
-  count             = var.alarm_create ? 1 : 0
+  count             = var.alarm_enabled ? 1 : 0
 
   namespace   = "AWS/Lambda"
   metric_name = "Throttles"

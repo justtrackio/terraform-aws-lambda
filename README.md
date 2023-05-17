@@ -20,7 +20,7 @@ Terraform module which creates a lambda function, monitoring via CloudWatch and 
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_cloudwatch_label"></a> [cloudwatch\_label](#module\_cloudwatch\_label) | justtrackio/label/null | 0.26.0 |
-| <a name="module_dead_letter_queue"></a> [dead\_letter\_queue](#module\_dead\_letter\_queue) | justtrackio/sqs-queue/aws | 1.5.0 |
+| <a name="module_dead_letter_queue"></a> [dead\_letter\_queue](#module\_dead\_letter\_queue) | justtrackio/sqs-queue/aws | 1.5.1 |
 | <a name="module_iam_label"></a> [iam\_label](#module\_iam\_label) | justtrackio/label/null | 0.26.0 |
 | <a name="module_lambda_label"></a> [lambda\_label](#module\_lambda\_label) | justtrackio/label/null | 0.26.0 |
 | <a name="module_sqs_label"></a> [sqs\_label](#module\_sqs\_label) | justtrackio/label/null | 0.26.0 |
@@ -50,7 +50,7 @@ Terraform module which creates a lambda function, monitoring via CloudWatch and 
 |------|-------------|------|---------|:--------:|
 | <a name="input_additional_tag_map"></a> [additional\_tag\_map](#input\_additional\_tag\_map) | Additional key-value pairs to add to each map in `tags_as_list_of_maps`. Not added to `tags` or `id`.<br>This is for some rare cases where resources want additional configuration of tags<br>and therefore take a list of maps with tag key, value, and additional configuration. | `map(string)` | `{}` | no |
 | <a name="input_alarm_backlog"></a> [alarm\_backlog](#input\_alarm\_backlog) | Errors alarm parameters | <pre>object({<br>    minutes             = optional(number, 5)<br>    datapoints_to_alarm = optional(number, 5)<br>    evaluation_periods  = optional(number, 5)<br>    period              = optional(number, 300)<br>    threshold           = optional(number, 1)<br>  })</pre> | `{}` | no |
-| <a name="input_alarm_create"></a> [alarm\_create](#input\_alarm\_create) | Whether to create the errors and success rate alarms or not | `bool` | `true` | no |
+| <a name="input_alarm_enabled"></a> [alarm\_enabled](#input\_alarm\_enabled) | Whether to create the errors and success rate alarms or not | `bool` | `true` | no |
 | <a name="input_alarm_errors"></a> [alarm\_errors](#input\_alarm\_errors) | Errors alarm parameters | <pre>object({<br>    datapoints_to_alarm = optional(number, 9)<br>    evaluation_periods  = optional(number, 10)<br>    period              = optional(number, 300)<br>    threshold           = optional(number, 1)<br>  })</pre> | `{}` | no |
 | <a name="input_alarm_success_rate"></a> [alarm\_success\_rate](#input\_alarm\_success\_rate) | Success rate alarm parameters | <pre>object({<br>    datapoints_to_alarm = optional(number, 1)<br>    evaluation_periods  = optional(number, 1)<br>    period              = optional(number, 60)<br>    threshold           = optional(number, 99)<br>  })</pre> | `{}` | no |
 | <a name="input_alarm_throttles"></a> [alarm\_throttles](#input\_alarm\_throttles) | Throttles alarm parameters | <pre>object({<br>    datapoints_to_alarm = optional(number, 2)<br>    evaluation_periods  = optional(number, 3)<br>    period              = optional(number, 60)<br>    threshold           = optional(number, 1)<br>  })</pre> | `{}` | no |
