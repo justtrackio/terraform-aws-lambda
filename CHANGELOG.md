@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/justtrackio/terraform-aws-lambda/compare/v1.1.0...v1.1.1) (2023-05-22)
+
+
+### Bug Fixes
+
+* adjust alarm toggle variable ([#8](https://github.com/justtrackio/terraform-aws-lambda/issues/8)) ([87ba42b](https://github.com/justtrackio/terraform-aws-lambda/commit/87ba42b9a81271eb7f63ea06ba603512dc0555f1))
+
 ## [1.1.0](https://github.com/justtrackio/terraform-aws-lambda/compare/v1.0.0...v1.1.0) (2023-05-15)
 
 
