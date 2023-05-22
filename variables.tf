@@ -10,7 +10,7 @@ variable "alarm_backlog" {
   default     = {}
 }
 
-variable "alarm_create" {
+variable "alarm_enabled" {
   type        = bool
   description = "Whether to create the errors and success rate alarms or not"
   default     = true

@@ -18,7 +18,7 @@ module "example" {
     sqs        = ["stage", "name", "attributes"]
   }
 
-  alarm_create = true
+  alarm_enabled = true
   alarm_backlog = {
     minutes             = 5
     datapoints_to_alarm = 5
