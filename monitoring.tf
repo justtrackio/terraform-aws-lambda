@@ -3,6 +3,7 @@ locals {
     Severity    = "warning"
     Description = "Lambda Function Metrics: https://${module.this.aws_region}.console.aws.amazon.com/lambda/home?region=${module.this.aws_region}#/functions/${local.function_name}?tab=monitoring"
   }, module.cloudwatch_label.tags, module.cloudwatch_label.additional_tag_map))
+  alarm_topic_arn = var.alarm_topic_arn != null ? var.alarm_topic_arn : "arn:aws:sns:${module.this.aws_region}:${module.this.aws_account_id}:${module.this.environment}-alarms"
 }
 
 resource "aws_iam_role_policy_attachment" "lambda_insights" {
@@ -33,8 +34,8 @@ resource "aws_cloudwatch_metric_alarm" "errors" {
     FunctionName = aws_lambda_function.default.function_name
   }
 
-  alarm_actions = [var.alarm_topic_arn]
-  ok_actions    = [var.alarm_topic_arn]
+  alarm_actions = [local.alarm_topic_arn]
+  ok_actions    = [local.alarm_topic_arn]
 }
 
 resource "aws_cloudwatch_metric_alarm" "success_rate" {
@@ -86,8 +87,8 @@ resource "aws_cloudwatch_metric_alarm" "success_rate" {
     return_data = true
   }
 
-  alarm_actions = [var.alarm_topic_arn]
-  ok_actions    = [var.alarm_topic_arn]
+  alarm_actions = [local.alarm_topic_arn]
+  ok_actions    = [local.alarm_topic_arn]
 }
 
 resource "aws_cloudwatch_metric_alarm" "throttles" {
@@ -111,6 +112,6 @@ resource "aws_cloudwatch_metric_alarm" "throttles" {
     FunctionName = aws_lambda_function.default.function_name
   }
 
-  alarm_actions = [var.alarm_topic_arn]
-  ok_actions    = [var.alarm_topic_arn]
+  alarm_actions = [local.alarm_topic_arn]
+  ok_actions    = [local.alarm_topic_arn]
 }
