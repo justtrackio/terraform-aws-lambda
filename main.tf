@@ -57,17 +57,13 @@ resource "aws_iam_role" "default" {
 
 data "aws_iam_policy_document" "log_stream_access" {
   statement {
-    actions = ["logs:CreateLogStream"]
-    resources = [
-      aws_cloudwatch_log_group.default.arn
+    actions = [
+      "logs:CreateLogStream",
+      "logs:PutLogEvents"
     ]
-    effect = "Allow"
-  }
-
-  statement {
-    actions = ["logs:PutLogEvents"]
     resources = [
-      "${aws_cloudwatch_log_group.default.arn}:*"
+      "${aws_cloudwatch_log_group.default.arn}:*",
+      "arn:aws:logs:${module.this.aws_region}:${module.this.aws_account_id}:log-group:/aws/lambda-insights:*"
     ]
     effect = "Allow"
   }
