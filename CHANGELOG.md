@@ -1,3 +1,15 @@
+## [1.2.0](https://github.com/justtrackio/terraform-aws-lambda/compare/v1.1.1...v1.2.0) (2023-10-25)
+
+
+### Features
+
+* add alarm topic arn convention ([#17](https://github.com/justtrackio/terraform-aws-lambda/issues/17)) ([463bb0a](https://github.com/justtrackio/terraform-aws-lambda/commit/463bb0af5d2b7bcdb094631d28334af65224c06c))
+
+
+### Bug Fixes
+
+* logging to cloudwatch ([#22](https://github.com/justtrackio/terraform-aws-lambda/issues/22)) ([3699702](https://github.com/justtrackio/terraform-aws-lambda/commit/3699702e627605166374c3f71731e47a01ad317b))
+
 ## [1.1.1](https://github.com/justtrackio/terraform-aws-lambda/compare/v1.1.0...v1.1.1) (2023-05-22)
 
 
