@@ -18,6 +18,7 @@ module "dead_letter_queue" {
 }
 
 data "aws_iam_policy_document" "dead_letter_queue_access" {
+  count = var.dead_letter_queue_create ? 1 : 0
   statement {
     effect    = "Allow"
     actions   = ["sqs:SendMessage"]
@@ -30,5 +31,5 @@ resource "aws_iam_role_policy" "dead_letter_queue" {
 
   role   = aws_iam_role.default.name
   name   = "${module.iam_label.id}-dead-letter-queue"
-  policy = data.aws_iam_policy_document.dead_letter_queue_access.json
+  policy = data.aws_iam_policy_document.dead_letter_queue_access[0].json
 }
