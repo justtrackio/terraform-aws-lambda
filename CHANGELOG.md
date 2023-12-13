@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/justtrackio/terraform-aws-lambda/compare/v1.2.0...v1.2.1) (2023-12-13)
+
+
+### Bug Fixes
+
+* dead_letter_queue_create input ([#28](https://github.com/justtrackio/terraform-aws-lambda/issues/28)) ([e0515a9](https://github.com/justtrackio/terraform-aws-lambda/commit/e0515a99fa5f5cbe21395cc90568a6e37462f53b))
+
 ## [1.2.0](https://github.com/justtrackio/terraform-aws-lambda/compare/v1.1.1...v1.2.0) (2023-10-25)
 
 
