@@ -92,5 +92,6 @@ Terraform module which creates a lambda function, monitoring via CloudWatch and 
 |------|-------------|
 | <a name="output_function_arn"></a> [function\_arn](#output\_function\_arn) | ARN of the lambda function |
 | <a name="output_function_name"></a> [function\_name](#output\_function\_name) | Name of the lambda function |
+| <a name="output_function_version"></a> [function\_version](#output\_function\_version) | Version of the lambda function |
 | <a name="output_iam_role_name"></a> [iam\_role\_name](#output\_iam\_role\_name) | IAM role name used to execute the function |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

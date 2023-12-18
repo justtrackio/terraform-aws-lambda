@@ -8,6 +8,11 @@ output "function_name" {
   value       = aws_lambda_function.default.function_name
 }
 
+output "function_version" {
+  description = "Version of the lambda function"
+  value       = aws_lambda_function.default.version
+}
+
 output "iam_role_name" {
   description = "IAM role name used to execute the function"
   value       = aws_iam_role.default.name
