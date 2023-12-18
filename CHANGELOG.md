@@ -1,3 +1,10 @@
+## [1.3.0](https://github.com/justtrackio/terraform-aws-lambda/compare/v1.2.1...v1.3.0) (2023-12-18)
+
+
+### Features
+
+* added lambda function_version as output and updated docs ([#29](https://github.com/justtrackio/terraform-aws-lambda/issues/29)) ([2d9953e](https://github.com/justtrackio/terraform-aws-lambda/commit/2d9953e199e13a567eb90dec305e14b47ec88785))
+
 ## [1.2.1](https://github.com/justtrackio/terraform-aws-lambda/compare/v1.2.0...v1.2.1) (2023-12-13)
 
 
