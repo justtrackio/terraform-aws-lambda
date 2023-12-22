@@ -85,6 +85,7 @@ Terraform module which creates a lambda function, monitoring via CloudWatch and 
 | <a name="input_tags"></a> [tags](#input\_tags) | Additional tags (e.g. `{'BusinessUnit': 'XYZ'}`).<br>Neither the tag keys nor the tag values will be modified by this module. | `map(string)` | `{}` | no |
 | <a name="input_tenant"></a> [tenant](#input\_tenant) | ID element \_(Rarely used, not included by default)\_. A customer identifier, indicating who this instance of a resource is for | `string` | `null` | no |
 | <a name="input_timeout"></a> [timeout](#input\_timeout) | Timeout ouf the lambda function in seconds. | `number` | `300` | no |
+| <a name="input_vpc_config"></a> [vpc\_config](#input\_vpc\_config) | VPC config for lambda function. | <pre>object({<br>    ipv6_allowed_for_dual_stack = optional(bool),<br>    security_group_ids          = list(string),<br>    subnet_ids                  = list(string),<br>  })</pre> | <pre>{<br>  "ipv6_allowed_for_dual_stack": false,<br>  "security_group_ids": [],<br>  "subnet_ids": []<br>}</pre> | no |
 
 ## Outputs
 

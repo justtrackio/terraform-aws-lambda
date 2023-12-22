@@ -117,3 +117,17 @@ variable "timeout" {
   description = "Timeout ouf the lambda function in seconds."
   default     = 300
 }
+
+variable "vpc_config" {
+  type = object({
+    ipv6_allowed_for_dual_stack = optional(bool),
+    security_group_ids          = list(string),
+    subnet_ids                  = list(string),
+  })
+  description = "VPC config for lambda function."
+  default = {
+    ipv6_allowed_for_dual_stack = false
+    security_group_ids          = [],
+    subnet_ids                  = [],
+  }
+}
