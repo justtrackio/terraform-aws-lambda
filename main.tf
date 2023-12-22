@@ -16,6 +16,15 @@ resource "aws_lambda_function" "default" {
   tags                           = module.lambda_label.tags
   timeout                        = var.timeout
 
+  dynamic "vpc_config" {
+    for_each = length(var.vpc_config) > 0 ? [true] : []
+    content {
+      ipv6_allowed_for_dual_stack = lookup(var.vpc_config, "ipv6_allowed_for_dual_stack")
+      security_group_ids          = lookup(var.vpc_config, "security_group_ids")
+      subnet_ids                  = lookup(var.vpc_config, "subnet_ids")
+    }
+  }
+
   dynamic "dead_letter_config" {
     for_each = local.dead_letter_arns
     content {
