@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/justtrackio/terraform-aws-lambda/compare/v1.4.0...v1.4.1) (2023-12-22)
+
+
+### Bug Fixes
+
+* fixed vpc config iam role ([843d70b](https://github.com/justtrackio/terraform-aws-lambda/commit/843d70bb6dd34e145b8bdbb5c8ec2d49ddb1b9ff))
+
 ## [1.4.0](https://github.com/justtrackio/terraform-aws-lambda/compare/v1.3.0...v1.4.0) (2023-12-22)
 
 
