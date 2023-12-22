@@ -1,3 +1,10 @@
+## [1.4.0](https://github.com/justtrackio/terraform-aws-lambda/compare/v1.3.0...v1.4.0) (2023-12-22)
+
+
+### Features
+
+* added vpc_config block ([#31](https://github.com/justtrackio/terraform-aws-lambda/issues/31)) ([922f371](https://github.com/justtrackio/terraform-aws-lambda/commit/922f371d40f7a0e9059d894c9b67d52f34bc4d20))
+
 ## [1.3.0](https://github.com/justtrackio/terraform-aws-lambda/compare/v1.2.1...v1.3.0) (2023-12-18)
 
 
