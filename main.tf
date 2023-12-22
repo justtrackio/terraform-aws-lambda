@@ -64,23 +64,7 @@ resource "aws_iam_role" "default" {
   tags               = module.iam_label.tags
 }
 
-data "aws_iam_policy_document" "log_stream_access" {
-  statement {
-    actions = [
-      "logs:CreateLogStream",
-      "logs:PutLogEvents"
-    ]
-    resources = [
-      "${aws_cloudwatch_log_group.default.arn}:*",
-      "arn:aws:logs:${module.this.aws_region}:${module.this.aws_account_id}:log-group:/aws/lambda-insights:*"
-    ]
-    effect = "Allow"
-  }
-}
-
-resource "aws_iam_role_policy" "logs" {
-  name = "${module.iam_label.id}-logs"
-
-  role   = aws_iam_role.default.id
-  policy = data.aws_iam_policy_document.log_stream_access.json
+resource "aws_iam_role_policy_attachment" "default" {
+  role       = aws_iam_role.default.name
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole"
 }
