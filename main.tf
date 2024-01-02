@@ -58,8 +58,7 @@ data "aws_iam_policy_document" "trust_policy" {
 }
 
 resource "aws_iam_role" "default" {
-  name = module.iam_label.id
-
+  name               = module.iam_label.id
   assume_role_policy = data.aws_iam_policy_document.trust_policy.json
   tags               = module.iam_label.tags
 }
