@@ -1,3 +1,10 @@
+## [1.5.0](https://github.com/justtrackio/terraform-aws-lambda/compare/v1.4.1...v1.5.0) (2024-04-22)
+
+
+### Features
+
+* allow to add additional policy to lambda functions execution role ([#44](https://github.com/justtrackio/terraform-aws-lambda/issues/44)) ([94c21ce](https://github.com/justtrackio/terraform-aws-lambda/commit/94c21ce5c35fe44d9a8d76da548356fe5f8fc64d))
+
 ## [1.4.1](https://github.com/justtrackio/terraform-aws-lambda/compare/v1.4.0...v1.4.1) (2024-01-02)
 
 
