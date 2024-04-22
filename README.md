@@ -7,13 +7,13 @@ Terraform module which creates a lambda function, monitoring via CloudWatch and 
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.0 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.67 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.46 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4.67 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5.46 |
 
 ## Modules
 
@@ -35,6 +35,7 @@ Terraform module which creates a lambda function, monitoring via CloudWatch and 
 | [aws_cloudwatch_metric_alarm.success_rate](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) | resource |
 | [aws_cloudwatch_metric_alarm.throttles](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) | resource |
 | [aws_iam_role.default](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
+| [aws_iam_role_policy.additional](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy) | resource |
 | [aws_iam_role_policy.dead_letter_queue](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy) | resource |
 | [aws_iam_role_policy_attachment.default](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
 | [aws_iam_role_policy_attachment.lambda_insights](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
@@ -47,6 +48,7 @@ Terraform module which creates a lambda function, monitoring via CloudWatch and 
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_additional_role_policy"></a> [additional\_role\_policy](#input\_additional\_role\_policy) | JSON of a aws\_iam\_policy\_document datasource to add to the role policies | `string` | `null` | no |
 | <a name="input_additional_tag_map"></a> [additional\_tag\_map](#input\_additional\_tag\_map) | Additional key-value pairs to add to each map in `tags_as_list_of_maps`. Not added to `tags` or `id`.<br>This is for some rare cases where resources want additional configuration of tags<br>and therefore take a list of maps with tag key, value, and additional configuration. | `map(string)` | `{}` | no |
 | <a name="input_alarm_backlog"></a> [alarm\_backlog](#input\_alarm\_backlog) | Errors alarm parameters | <pre>object({<br>    minutes             = optional(number, 5)<br>    datapoints_to_alarm = optional(number, 5)<br>    evaluation_periods  = optional(number, 5)<br>    period              = optional(number, 300)<br>    threshold           = optional(number, 1)<br>  })</pre> | `{}` | no |
 | <a name="input_alarm_enabled"></a> [alarm\_enabled](#input\_alarm\_enabled) | Whether to create the errors and success rate alarms or not | `bool` | `true` | no |

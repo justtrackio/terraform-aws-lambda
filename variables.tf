@@ -1,3 +1,9 @@
+variable "additional_role_policy" {
+  type        = string
+  description = "JSON of a aws_iam_policy_document datasource to add to the role policies"
+  default     = null
+}
+
 variable "alarm_backlog" {
   type = object({
     minutes             = optional(number, 5)

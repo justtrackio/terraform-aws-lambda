@@ -19,9 +19,9 @@ resource "aws_lambda_function" "default" {
   dynamic "vpc_config" {
     for_each = length(var.vpc_config) > 0 ? [true] : []
     content {
-      ipv6_allowed_for_dual_stack = lookup(var.vpc_config, "ipv6_allowed_for_dual_stack")
-      security_group_ids          = lookup(var.vpc_config, "security_group_ids")
-      subnet_ids                  = lookup(var.vpc_config, "subnet_ids")
+      ipv6_allowed_for_dual_stack = var.vpc_config.ipv6_allowed_for_dual_stack
+      security_group_ids          = var.vpc_config.security_group_ids
+      subnet_ids                  = var.vpc_config.subnet_ids
     }
   }
 
@@ -67,4 +67,12 @@ resource "aws_iam_role" "default" {
 resource "aws_iam_role_policy_attachment" "default" {
   role       = aws_iam_role.default.name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole"
+}
+
+resource "aws_iam_role_policy" "additional" {
+  count = var.additional_role_policy != null ? 1 : 0
+
+  role   = aws_iam_role.default.name
+  name   = "${module.iam_label.id}-additional"
+  policy = var.additional_role_policy
 }
